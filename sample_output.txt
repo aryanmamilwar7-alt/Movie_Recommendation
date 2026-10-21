@@ -1,0 +1,45 @@
+[data] Loading movies.csv / ratings.csv from /home/claude/movie_recommender_project/data
+[data] 400 users, 56 movies, 9121 ratings (sparsity 59.3%)
+
+=== Hyperparameter tuning (validation RMSE) ===
+  KNN  k=5   RMSE=0.7419
+  KNN  k=10  RMSE=0.7253
+  KNN  k=20  RMSE=0.7239
+  KNN  k=40  RMSE=0.7240
+  SVD  components=5   RMSE=0.7407
+  SVD  components=10  RMSE=0.7507
+  SVD  components=15  RMSE=0.7614
+  SVD  components=25  RMSE=0.7723
+  -> best k=20, best components=5
+
+=== Test-set performance ===
+Model           RMSE     MAE    P@10
+popularity    0.6893  0.5445   0.430
+content       0.7288  0.5855   0.431
+knn           0.6964  0.5493   0.432
+svd           0.7131  0.5637   0.432
+hybrid        0.6921  0.5475   0.431
+
+=== Top 10 recommendations for user 5 (hybrid) ===
+Already liked: Dumb and Dumber, The Notebook, La La Land, The Lion King
+ 1. The Hangover                     Comedy                                 predicted 3.89
+ 2. Bridesmaids                      Comedy|Romance                         predicted 3.85
+ 3. Superbad                         Comedy                                 predicted 3.79
+ 4. Pride & Prejudice                Drama|Romance                          predicted 3.68
+ 5. Titanic                          Drama|Romance                          predicted 3.65
+ 6. Dilwale Dulhania Le Jayenge      Comedy|Drama|Musical|Romance           predicted 3.54
+ 7. Pulp Fiction                     Comedy|Crime|Drama|Thriller            predicted 3.54
+ 8. Frozen                           Animation|Children|Comedy|Musical      predicted 3.52
+ 9. Knives Out                       Comedy|Crime|Drama|Mystery             predicted 3.5
+10. Casablanca                       Drama|Romance|War                      predicted 3.44
+
+=== Movies similar to 'Inception' ===
+(matched: Inception)
+  Die Hard                         Action|Thriller                        score 0.475
+  Iron Man                         Action|Adventure|Sci-Fi                score 0.448
+  Avengers: Endgame                Action|Adventure|Sci-Fi                score 0.432
+  The Matrix                       Action|Sci-Fi                          score 0.413
+  Ex Machina                       Drama|Sci-Fi|Thriller                  score 0.392
+  Mad Max: Fury Road               Action|Adventure|Sci-Fi                score 0.354
+  John Wick                        Action|Crime|Thriller                  score 0.354
+  Dangal                           Action|Drama                           score 0.317
